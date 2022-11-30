@@ -3,7 +3,8 @@ const {createApp} = Vue;
 createApp({
 	data() {
 		return {
-            emailList: []
+            emailList: [],
+            preEmailList: []
 		}
 	},
 	methods: {
@@ -14,7 +15,11 @@ createApp({
                 console.log(resp.data)
                 console.log(resp.data.response)
 
-                this.emailList.push(resp.data.response)
+                this.preEmailList.push(resp.data.response);
+
+                if (this.preEmailList.length === 10) {
+                    this.emailList = this.preEmailList;
+                }
             })
         }
 	},
