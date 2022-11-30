@@ -21,12 +21,15 @@ createApp({
                     this.emailList = this.preEmailList;
                 }
             })
+        },
+
+        printEmailList (){
+            for(let i = 0; i < 10; i++){
+                this.fetchData()
+            }
         }
 	},
     mounted() {
-        // stampa di 10 email
-        for(let i = 0; i < 10; i++){
-            this.fetchData()
-        }
+        
     }
 }).mount ('#app')
